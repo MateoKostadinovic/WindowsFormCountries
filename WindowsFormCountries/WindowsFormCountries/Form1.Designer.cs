@@ -42,9 +42,28 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.lblKontinent = new System.Windows.Forms.Label();
+            this.lblSortiranje = new System.Windows.Forms.Label();
+            this.lblPretrazi = new System.Windows.Forms.Label();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.lblKod = new System.Windows.Forms.Label();
+            this.lblNaziv = new System.Windows.Forms.Label();
+            this.lblGlGr = new System.Windows.Forms.Label();
+            this.lblBrSt = new System.Windows.Forms.Label();
+            this.lblPovrsina = new System.Windows.Forms.Label();
+            this.lblKontinet = new System.Windows.Forms.Label();
+            this.textBoxKod = new System.Windows.Forms.TextBox();
+            this.textBoxNaziv = new System.Windows.Forms.TextBox();
+            this.textBoxGlavniGrad = new System.Windows.Forms.TextBox();
+            this.textBoxBrojStan = new System.Windows.Forms.TextBox();
+            this.textBoxPovrsina = new System.Windows.Forms.TextBox();
+            this.comboBoxAdd = new System.Windows.Forms.ComboBox();
+            this.buttonSpremi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCountries)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,6 +149,11 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.buttonSearch);
+            this.tabPage1.Controls.Add(this.textBoxSearch);
+            this.tabPage1.Controls.Add(this.lblPretrazi);
+            this.tabPage1.Controls.Add(this.lblSortiranje);
+            this.tabPage1.Controls.Add(this.lblKontinent);
             this.tabPage1.Controls.Add(this.comboBoxSort);
             this.tabPage1.Controls.Add(this.dataGridViewCountries);
             this.tabPage1.Controls.Add(this.comboBoxRegion);
@@ -143,6 +167,19 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.buttonSpremi);
+            this.tabPage2.Controls.Add(this.comboBoxAdd);
+            this.tabPage2.Controls.Add(this.textBoxPovrsina);
+            this.tabPage2.Controls.Add(this.textBoxBrojStan);
+            this.tabPage2.Controls.Add(this.textBoxGlavniGrad);
+            this.tabPage2.Controls.Add(this.textBoxNaziv);
+            this.tabPage2.Controls.Add(this.textBoxKod);
+            this.tabPage2.Controls.Add(this.lblKontinet);
+            this.tabPage2.Controls.Add(this.lblPovrsina);
+            this.tabPage2.Controls.Add(this.lblBrSt);
+            this.tabPage2.Controls.Add(this.lblGlGr);
+            this.tabPage2.Controls.Add(this.lblNaziv);
+            this.tabPage2.Controls.Add(this.lblKod);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -171,6 +208,157 @@
             this.webBrowser1.TabIndex = 0;
             this.webBrowser1.Url = new System.Uri(" https://www.openstreetmap.org", System.UriKind.Absolute);
             // 
+            // lblKontinent
+            // 
+            this.lblKontinent.AutoSize = true;
+            this.lblKontinent.Location = new System.Drawing.Point(23, 17);
+            this.lblKontinent.Name = "lblKontinent";
+            this.lblKontinent.Size = new System.Drawing.Size(52, 13);
+            this.lblKontinent.TabIndex = 3;
+            this.lblKontinent.Text = "Kontinent";
+            // 
+            // lblSortiranje
+            // 
+            this.lblSortiranje.AutoSize = true;
+            this.lblSortiranje.Location = new System.Drawing.Point(23, 77);
+            this.lblSortiranje.Name = "lblSortiranje";
+            this.lblSortiranje.Size = new System.Drawing.Size(66, 13);
+            this.lblSortiranje.TabIndex = 4;
+            this.lblSortiranje.Text = "Sortiranje po";
+            // 
+            // lblPretrazi
+            // 
+            this.lblPretrazi.AutoSize = true;
+            this.lblPretrazi.Location = new System.Drawing.Point(23, 134);
+            this.lblPretrazi.Name = "lblPretrazi";
+            this.lblPretrazi.Size = new System.Drawing.Size(42, 13);
+            this.lblPretrazi.TabIndex = 5;
+            this.lblPretrazi.Text = "Pretraži";
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Location = new System.Drawing.Point(23, 150);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(193, 20);
+            this.textBoxSearch.TabIndex = 6;
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Location = new System.Drawing.Point(23, 177);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(193, 39);
+            this.buttonSearch.TabIndex = 7;
+            this.buttonSearch.Text = "Pretraži";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // lblKod
+            // 
+            this.lblKod.AutoSize = true;
+            this.lblKod.Location = new System.Drawing.Point(22, 36);
+            this.lblKod.Name = "lblKod";
+            this.lblKod.Size = new System.Drawing.Size(29, 13);
+            this.lblKod.TabIndex = 0;
+            this.lblKod.Text = "Kod:";
+            // 
+            // lblNaziv
+            // 
+            this.lblNaziv.AutoSize = true;
+            this.lblNaziv.Location = new System.Drawing.Point(22, 75);
+            this.lblNaziv.Name = "lblNaziv";
+            this.lblNaziv.Size = new System.Drawing.Size(37, 13);
+            this.lblNaziv.TabIndex = 1;
+            this.lblNaziv.Text = "Naziv:";
+            // 
+            // lblGlGr
+            // 
+            this.lblGlGr.AutoSize = true;
+            this.lblGlGr.Location = new System.Drawing.Point(22, 124);
+            this.lblGlGr.Name = "lblGlGr";
+            this.lblGlGr.Size = new System.Drawing.Size(64, 13);
+            this.lblGlGr.TabIndex = 2;
+            this.lblGlGr.Text = "Glavni grad:";
+            // 
+            // lblBrSt
+            // 
+            this.lblBrSt.AutoSize = true;
+            this.lblBrSt.Location = new System.Drawing.Point(22, 175);
+            this.lblBrSt.Name = "lblBrSt";
+            this.lblBrSt.Size = new System.Drawing.Size(83, 13);
+            this.lblBrSt.TabIndex = 3;
+            this.lblBrSt.Text = "Broj stanovnika:";
+            // 
+            // lblPovrsina
+            // 
+            this.lblPovrsina.AutoSize = true;
+            this.lblPovrsina.Location = new System.Drawing.Point(22, 229);
+            this.lblPovrsina.Name = "lblPovrsina";
+            this.lblPovrsina.Size = new System.Drawing.Size(48, 13);
+            this.lblPovrsina.TabIndex = 4;
+            this.lblPovrsina.Text = "Povrsina";
+            // 
+            // lblKontinet
+            // 
+            this.lblKontinet.AutoSize = true;
+            this.lblKontinet.Location = new System.Drawing.Point(22, 280);
+            this.lblKontinet.Name = "lblKontinet";
+            this.lblKontinet.Size = new System.Drawing.Size(55, 13);
+            this.lblKontinet.TabIndex = 5;
+            this.lblKontinet.Text = "Kontinent:";
+            // 
+            // textBoxKod
+            // 
+            this.textBoxKod.Location = new System.Drawing.Point(115, 36);
+            this.textBoxKod.Name = "textBoxKod";
+            this.textBoxKod.Size = new System.Drawing.Size(121, 20);
+            this.textBoxKod.TabIndex = 6;
+            // 
+            // textBoxNaziv
+            // 
+            this.textBoxNaziv.Location = new System.Drawing.Point(115, 75);
+            this.textBoxNaziv.Name = "textBoxNaziv";
+            this.textBoxNaziv.Size = new System.Drawing.Size(121, 20);
+            this.textBoxNaziv.TabIndex = 7;
+            // 
+            // textBoxGlavniGrad
+            // 
+            this.textBoxGlavniGrad.Location = new System.Drawing.Point(115, 116);
+            this.textBoxGlavniGrad.Name = "textBoxGlavniGrad";
+            this.textBoxGlavniGrad.Size = new System.Drawing.Size(121, 20);
+            this.textBoxGlavniGrad.TabIndex = 8;
+            // 
+            // textBoxBrojStan
+            // 
+            this.textBoxBrojStan.Location = new System.Drawing.Point(115, 175);
+            this.textBoxBrojStan.Name = "textBoxBrojStan";
+            this.textBoxBrojStan.Size = new System.Drawing.Size(121, 20);
+            this.textBoxBrojStan.TabIndex = 9;
+            // 
+            // textBoxPovrsina
+            // 
+            this.textBoxPovrsina.Location = new System.Drawing.Point(115, 229);
+            this.textBoxPovrsina.Name = "textBoxPovrsina";
+            this.textBoxPovrsina.Size = new System.Drawing.Size(121, 20);
+            this.textBoxPovrsina.TabIndex = 10;
+            // 
+            // comboBoxAdd
+            // 
+            this.comboBoxAdd.FormattingEnabled = true;
+            this.comboBoxAdd.Location = new System.Drawing.Point(115, 280);
+            this.comboBoxAdd.Name = "comboBoxAdd";
+            this.comboBoxAdd.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxAdd.TabIndex = 11;
+            // 
+            // buttonSpremi
+            // 
+            this.buttonSpremi.Location = new System.Drawing.Point(25, 323);
+            this.buttonSpremi.Name = "buttonSpremi";
+            this.buttonSpremi.Size = new System.Drawing.Size(211, 69);
+            this.buttonSpremi.TabIndex = 12;
+            this.buttonSpremi.Text = "Spremi";
+            this.buttonSpremi.UseVisualStyleBackColor = true;
+            this.buttonSpremi.Click += new System.EventHandler(this.buttonSpremi_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,6 +370,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCountries)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -203,6 +394,24 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.Label lblPretrazi;
+        private System.Windows.Forms.Label lblSortiranje;
+        private System.Windows.Forms.Label lblKontinent;
+        private System.Windows.Forms.TextBox textBoxPovrsina;
+        private System.Windows.Forms.TextBox textBoxBrojStan;
+        private System.Windows.Forms.TextBox textBoxGlavniGrad;
+        private System.Windows.Forms.TextBox textBoxNaziv;
+        private System.Windows.Forms.TextBox textBoxKod;
+        private System.Windows.Forms.Label lblKontinet;
+        private System.Windows.Forms.Label lblPovrsina;
+        private System.Windows.Forms.Label lblBrSt;
+        private System.Windows.Forms.Label lblGlGr;
+        private System.Windows.Forms.Label lblNaziv;
+        private System.Windows.Forms.Label lblKod;
+        private System.Windows.Forms.ComboBox comboBoxAdd;
+        private System.Windows.Forms.Button buttonSpremi;
     }
 }
 

@@ -92,6 +92,11 @@ namespace WindowsFormCountries
                 "Povrsina"
             };
             comboBoxSort.DataSource = lSortCriterias;
+
+            /*COMBO BOX- DODAVANJE DRZAVE*/
+            List<String> lRegions2 = lCountries.Where(o => o.sRegion != "").Select(o => o.sRegion).Distinct().ToList();
+            lRegions2.Insert(0, "Svi kontinenti");
+            comboBoxAdd.DataSource = lRegions2;
         }
 
         private void comboBoxRegion_SelectedIndexChanged(object sender, EventArgs e)
@@ -127,6 +132,32 @@ namespace WindowsFormCountries
                     dataGridViewCountries.DataSource = lCountries.OrderByDescending(o => o.fArea).ToList();
                     break;
             }
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            string sPretrazi = (string)textBoxSearch.Text;
+            dataGridViewCountries.DataSource = lCountries.Where(o => o.sName.Contains(sPretrazi)).ToList();
+        }
+
+        private void buttonSpremi_Click(object sender, EventArgs e)
+        {
+            string sKod = (string)textBoxKod.Text;
+            string sNaziv = (string)textBoxNaziv.Text;
+            string sGlavniGrad = (string)textBoxGlavniGrad.Text;
+            int nBrojStanovnika = Convert.ToInt32(textBoxBrojStan.Text);
+            float fPovrsina = Convert.ToSingle(textBoxPovrsina.Text);
+            string sKontinent = (string)comboBoxAdd.SelectedItem;
+            lCountries.Add(new Country
+            {
+                sCode = sKod,
+                sName = sNaziv,
+                sCapital = sGlavniGrad,
+                nPopulation = nBrojStanovnika,
+                fArea = fPovrsina,
+                sRegion = sKontinent
+            });
+            dataGridViewCountries.DataSource = lCountries;
         }
     }
 }
