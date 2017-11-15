@@ -142,14 +142,13 @@ namespace WindowsFormCountries
 
         private void buttonSpremi_Click(object sender, EventArgs e)
         {      
-            string sKod = (string)textBoxKod.Text;
-            string sNaziv = (string)textBoxNaziv.Text;
-            string sGlavniGrad = (string)textBoxGlavniGrad.Text;
+            string sKod = textBoxKod.Text;
+            string sNaziv = textBoxNaziv.Text;
+            string sGlavniGrad = textBoxGlavniGrad.Text;
             int nBrojStanovnika = Convert.ToInt32(textBoxBrojStan.Text);
             float fPovrsina = Convert.ToSingle(textBoxPovrsina.Text);
-            string sKontinent = (string)comboBoxAdd.SelectedItem;
-            lCountries = GetCountries();
-            
+            string sKontinent = comboBoxAdd.Text;
+
             lCountries.Add(new Country
             {
                 sCode = sKod,
@@ -159,7 +158,7 @@ namespace WindowsFormCountries
                 fArea = fPovrsina,
                 sRegion = sKontinent
             });
-            
+
             dataGridViewCountries.DataSource = lCountries;
         }
     }
